@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function StockDetails({list, id}) {
-  console.log("id",id)
+export default function StockDetails({item}) {
+
   return (
     <>
     <p>DETAILS</p>
@@ -12,10 +12,10 @@ export default function StockDetails({list, id}) {
           </tr>
         </thead>
         <tbody>
-            <tr>HIGH: {list.HIGH}</tr>
-            <tr>LOW: {list.LOW}</tr>
-            <tr>LAST: {list.LAST}</tr>
-            <tr>DATE: {list.DATE}</tr>
+            <tr>HIGH: {item.HIGH}</tr>
+            <tr>LOW: {item.LOW}</tr>
+            <tr>LAST: {item.LAST}</tr>
+            <tr>DATE: {item.DATE}</tr>
         </tbody>
       </table>
       </>
