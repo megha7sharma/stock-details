@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { getStockData } from '../redux/actions/actions';
+import React, { useState } from 'react'
 import StockDetails from './StockDetails';
 
 export default function StockList({list,id}) {
@@ -13,10 +11,10 @@ export default function StockList({list,id}) {
 
   return (
     <>
-              <tr onClick={() => handleList()} style={{ border: "2px solid black",backgroundColor: "grey", cursor: "pointer" }}>
-                <td>{list.STOCK}</td>
-                <td>{list.DATE}</td>
-                <td>{list.LAST}</td>
+              <tr onClick={() => handleList()} style={(id%2) ? {backgroundColor: "white", cursor: "pointer"} : {backgroundColor: "grey", cursor: "pointer"}}>
+                <td style={{ textAlign: "left" }}>{list.STOCK}</td>
+                <td style={{ textAlign: "right" }}>{list.DATE}</td>
+                <td style={{ textAlign: "right" }}>{list.LAST}</td>
               </tr>
               <div style={{ position: "absolute", backgroundColor: "white", left: "50%"}}>
             {show ? <StockDetails id={id} list={list} /> : null}
